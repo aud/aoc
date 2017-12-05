@@ -5,17 +5,15 @@
 #define DIMENSION_ONE 16
 #define DIMENSION_TWO 16
 
-int Checksum(int arr[DIMENSION_ONE][DIMENSION_TWO]) {
-  int sum = 0;
-  int result = 0;
+static unsigned short int Checksum(int arr[DIMENSION_ONE][DIMENSION_TWO]) {
+  unsigned short int sum = 0, result = 0;
 
   for (int i = 0; i < DIMENSION_ONE; i++) {
     for (int k = 0; k < DIMENSION_TWO; k++) {
 
       // Loop through possible evenly divisible matches and add to sum.
       for (int p = k+1; p < DIMENSION_TWO; p++) {
-        int value_one = arr[i][k];
-        int value_two = arr[i][p];
+        unsigned short int value_one = arr[i][k], value_two = arr[i][p];
 
         if (value_two % value_one == 0) {
           result = value_two / value_one;

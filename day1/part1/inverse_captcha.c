@@ -2,25 +2,20 @@
 #include <string.h>
 #include <assert.h>
 
-int Sum(char *arr) {
-  int result = 0;
-  int arr_size = strlen(arr);
+static unsigned short int Sum(char *arr) {
+  unsigned short int result = 0, arr_size = strlen(arr);
 
   for (int i = 0; i < arr_size; i++) {
-    int iteration = arr[i];
-    int iteration_next = arr[i+1];
+    unsigned short int iteration = arr[i], iteration_next = arr[i+1];
 
-    if (iteration == iteration_next) {
+    if (iteration == iteration_next)
       result += iteration - '0';
-    }
   }
 
-  int first_element = arr[0];
-  int last_element = arr[arr_size-1];
+  unsigned short int first_element = arr[0], last_element = arr[arr_size-1];
 
-  if (first_element == last_element) {
+  if (first_element == last_element)
     result += first_element - '0';
-  }
 
   return result;
 }

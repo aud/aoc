@@ -5,15 +5,14 @@
 #define DIMENSION_ONE 16
 #define DIMENSION_TWO 16
 
-int Checksum(int arr[DIMENSION_ONE][DIMENSION_TWO]) {
-  int sum = 0;
+static unsigned short int Checksum(int arr[DIMENSION_ONE][DIMENSION_TWO]) {
+  unsigned short int sum = 0;
 
   for (int i = 0; i < DIMENSION_ONE; i++) {
-    int min = arr[i][0];
-    int max = arr[i][0];
+    unsigned short int min = arr[i][0], max = arr[i][0];
 
     for (int k = 0; k < DIMENSION_TWO; k++) {
-      int value = arr[i][k];
+      unsigned short int value = arr[i][k];
 
       if (value > max) {
         max = value;
